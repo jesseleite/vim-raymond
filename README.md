@@ -1,6 +1,6 @@
 # Vim Raymond 🔫
 
-A Vim / Neovim wrapper for [Ray](https://myray.app/) by [Spatie](https://spatie.be/) that everyone will love!
+A Vim / Neovim wrapper for [Ray](https://myray.app/) by [Spatie](https://spatie.be/) that everybody will love!
 
 ## Requirements
 
@@ -20,18 +20,39 @@ Plug 'jesseleite/vim-raymond', {'for': ['vim', 'lua']}
 
 ## Usage
 
-To dump to Ray, just call the global `Ray()` function. You may also pass [ray-cli flags](https://github.com/permafrost-dev/ray-cli#available-options) into `Ray()` as a second argument.
-
-### Dump to Ray from your `.vim` files:
+Dump to Ray from your `.vim` files:
 
 ```vim
 call Ray(data)
-call Ray(data, '--green --large')
 ```
 
-### Dump to Ray from your `.lua` files in Neovim:
+Dump to Ray from your `.lua` files in Neovim:
 
 ```lua
 Ray(data)
+```
+
+You may also pass [ray-cli flags](https://github.com/permafrost-dev/ray-cli#available-options) into `Ray()` as a second argument:
+
+```lua
 Ray(data, '--green --large')
 ```
+
+Clearing screen does not require a data argument:
+
+```lua
+Ray('--clear')
+```
+
+## Example
+
+```lua
+Ray('--clear')
+Ray(vim_users, '--green')
+Ray(current_feelings, '--purple')
+Ray(first_name, '--blue')
+```
+
+![](example.png)
+
+![](https://media.giphy.com/media/QBozhcw84UW0sNSUkw/giphy.gif)
